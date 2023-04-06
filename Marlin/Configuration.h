@@ -667,9 +667,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  18.86
-    #define DEFAULT_Ki   1.27
-    #define DEFAULT_Kd  70.30
+    #define DEFAULT_Kp 19.02
+    #define DEFAULT_Ki  1.25
+    #define DEFAULT_Kd 72.47
   #endif
 #endif
 
@@ -1168,7 +1168,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 144.3497 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
