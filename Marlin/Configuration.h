@@ -1104,7 +1104,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
@@ -1331,7 +1331,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+#define BLTOUCH
 
 /**
  * MagLev V4 probe by MDD
@@ -1483,11 +1483,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, -31.14, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 20
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1560,8 +1560,8 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
+#define Z_CLEARANCE_DEPLOY_PROBE   20 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES 15 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
@@ -1873,7 +1873,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -2017,7 +2017,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-//#define LCD_BED_LEVELING
+#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
@@ -2090,7 +2090,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
@@ -2176,7 +2176,7 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
-//#define EEPROM_SETTINGS     // Persistent storage with M500 and M501
+#define EEPROM_SETTINGS     // Persistent storage with M500 and M501
 //#define DISABLE_M503        // Saves ~2700 bytes of flash. Disable for release!
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
@@ -2516,7 +2516,7 @@
 //  If CLOCKWISE normally moves DOWN this makes it go UP.
 //  If CLOCKWISE normally moves UP this makes it go DOWN.
 //
-//#define REVERSE_MENU_DIRECTION
+#define REVERSE_MENU_DIRECTION
 
 //
 // This option reverses the encoder direction for Select Screen.
@@ -2541,8 +2541,8 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-//#define INDIVIDUAL_AXIS_HOMING_MENU
-//#define INDIVIDUAL_AXIS_HOMING_SUBMENU
+#define INDIVIDUAL_AXIS_HOMING_MENU
+#define INDIVIDUAL_AXIS_HOMING_SUBMENU
 
 //
 // SPEAKER/BUZZER
@@ -2732,7 +2732,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller
